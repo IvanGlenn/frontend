@@ -1,0 +1,148 @@
+/* body {
+    background-color: #fff;
+    color: blue;
+    font-size: 21px;
+} */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+/* Light mode will be the default and all relevant colour variables are defined under ":root" */
+:root {
+    --background: linear-gradient(to right, rgb(133, 130, 130), rgb(81, 88, 96));
+    --clr-button: rgb(230, 230, 230);
+    --clr-button-hover: rgba(223, 219, 219, 0.5);
+    --clr-button-border: 1px solid rgb(95, 92, 92);
+    --display-background: rgba(230, 230, 230, 0.65);
+    --clr-previous-number-display: rgb(104, 101, 101);
+    --clr-current-number-display: rgb(18, 18, 18);
+    --clr-toggle-darkmode: rgb(255, 255, 255);
+}
+
+/* Define dark mode colours here */
+.darkmode {
+    --background: linear-gradient(to right, rgb(0, 0, 0), rgb(77, 77, 77));
+    --clr-button: rgb(101, 101, 101);
+    --clr-button-hover: rgba(120, 120, 120, 0.5);
+    --clr-button-border: 1px solid rgb(255, 255, 255);
+    --display-background: rgba(86, 86, 86, 0.65);
+    --clr-previous-number-display: rgb(255, 255, 255);
+    --clr-current-number-display: rgb(0, 0, 0);
+    --clr-toggle-darkmode: rgba(207, 207, 207, 0.5);
+}
+
+/* style the background */
+body{
+    padding: 0;
+    margin: 0;
+    background: var(--background);
+
+}
+
+.toggle-dark-mode{
+    cursor: pointer;
+    font-size: 2rem;
+    border: var(--clr-button-border);
+/* background-color: rgb(255, 255, 255); */
+    background-color: var(--clr-toggle-darkmode);
+}
+
+.calculator-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(6, 100px);
+}
+
+
+.calculator-grid > button{
+cursor: pointer;
+font-size: 2rem;
+border: var(--clr-button-border);
+/* background-color: rgb(255, 255, 255); */
+background-color: var(--clr-button);
+}
+
+.calculator-grid > button:hover{
+    background-color: var(--clr-button-hover)
+    }
+
+/* Style the output display text */
+.output{
+    grid-column: 1/-1;
+    background-color: var(--display-background);
+    color: darkgoldenrod;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    font-size: 35px;
+}
+
+/* Style the previous number inside the display */
+.output .previous-number{
+    color: var(--clr-previous-number-display);
+}
+/* Style the current number inside the display */
+.output .current-number{
+    color: var(--clr-current-number-display);
+}
+
+/* .container is a class, so this dictates the style for the whole class
+.container{ 
+    width: 100%;
+    height: 100vh;
+    background: #363f4d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator {
+    background: #694719;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.btn-group{
+    background-color: darkblue; /* Green background */
+   /* border: 1px darkcyan; /* Green border */
+    /* color: red; /* White text */
+   /* padding: 10px 24px; /* Some padding */
+    /* cursor: pointer; Pointer/hand icon */
+    /* float: left; Float the buttons side by side */
+/* } */
+
+/* Specify the style of input buttons inside a .calculator div, inside a form */
+/*.calculator form input {
+    border: 0;
+    outline: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, );
+    background-color: darkorange;
+}
+
+/* Adjust the display field */
+/*form .display {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+    
+}
+form .display input{
+    text-align: right;
+    flex: 1;
+    font-size: 45px;
+} */
